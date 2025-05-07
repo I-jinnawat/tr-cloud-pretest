@@ -1,0 +1,13 @@
+<div>
+    <h1 style="text-align: center;">First Question</h1>
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+</div>
+
+<ng-template #content>  
+        <form (ngSubmit)="onSubmit()">
+            <p style="text-align: center;">Number of Star</p>
+            <input type="number" [(ngModel)]="star" name="star" min="0" style="margin-right: 5px;">
+            <button type="submit">Let's Go</button>
+        </form>
+        <pre>{{result}}</pre>
+</ng-template>

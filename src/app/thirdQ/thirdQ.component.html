@@ -1,0 +1,74 @@
+<div >
+    <div class="content">
+        <div style="margin-right:50px ;">
+            <ng-container *ngTemplateOutlet="arr1Template"></ng-container>
+        </div>
+        <div>
+            <ng-container *ngTemplateOutlet="arr2Template"></ng-container>
+        </div> 
+    </div>
+    <hr>
+    <div>
+        <ng-container *ngTemplateOutlet="resultTemplate"></ng-container>
+    </div>
+</div>
+
+<ng-template #arr1Template>
+    <label><b>Array1</b></label>
+    <table>
+        <thead>
+            <tr>
+                <th>code</th>
+                <th>name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of arr1; track $index) {
+                <tr>
+                    <td>{{item.code}}</td>
+                    <td>{{item.name}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</ng-template>
+<ng-template #arr2Template>
+    <label><b>Array2</b></label>
+    <table>
+        <thead>
+            <tr>
+                <th>code</th>
+                <th>name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of arr2; track $index) {
+                <tr>
+                    <td>{{item.code}}</td>
+                    <td>{{item.city}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</ng-template>
+<ng-template #resultTemplate>
+    <label><b>Output</b></label>
+    <table>
+        <thead>
+            <tr>
+                <th>code</th>
+                <th>name</th>
+                <th>city</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of result; track $index) {
+                <tr>
+                    <td>{{item.code}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.city}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</ng-template>

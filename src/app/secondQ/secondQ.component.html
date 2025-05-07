@@ -1,0 +1,24 @@
+<form (ngSubmit)="onSubmit()">
+    <table>
+      <thead>
+        <tr>
+          <th *ngFor="let item of items">{{ item.key }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td *ngFor="let item of items; let i = index">
+            <input
+              type="number"
+              [(ngModel)]="values[i]"
+              name="value{{i}}"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <button type="submit">Submit</button>
+    <button type="button" (click)="clear()">Clear</button>
+  </form>
+  
